@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // Route to handle POST requests
 app.post('/v1/product-stocks/bulk-update', (req, res) => {
   console.log('Received POST request:', req.body)
+  console.log('Total products:', req.body.stocks?.length || 0)
 
   // Send 'OK' response
   res.status(200).send('OK')
